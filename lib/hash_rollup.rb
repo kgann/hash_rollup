@@ -1,4 +1,4 @@
-module Rollup
+module HashRollup
   def rollup(hash)
     rolled_up = reduce({}) do |new_hash, tuple|
       key, value = tuple
@@ -12,5 +12,5 @@ module Rollup
 end
 
 class Hash
-  include Rollup
+  include HashRollup
 end
