@@ -6,9 +6,10 @@ module HashRollup
       new_hash
     end
     rolled_up = hash.merge(rolled_up)
-    rolled_up.each_pair{ |key, value| yield value, key } if block_given?
+    rolled_up.each_pair{ |key, value| rolled_up[key] = yield(value, key) } if block_given?
     rolled_up
   end
+
 end
 
 class Hash
