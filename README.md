@@ -1,8 +1,7 @@
 # Hash Rollup
 
 ### Ruby Hash Extension
-
-## Dependencies
+-----------------------
 
 Provides a way to merge two hashes and retain all values that belonged to duplicate keys
 
