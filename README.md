@@ -3,7 +3,7 @@
 ### Ruby Hash Extension
 -----------------------
 
-Provides a way to merge two hashes and retain all values that belonged to duplicate keys
+Provides a way to merge two hashes and retain all values that belong to duplicate keys
 
 Think of it as a 'soft' merge
 
