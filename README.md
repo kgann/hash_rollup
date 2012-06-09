@@ -1,15 +1,13 @@
-hash_rollup
-===========
+## hash_rollup ##
 
-Ruby Hash Extension
+### Ruby Hash Extension ###
 
 Provides a way to merge two hashes and retain all values that belonged to duplicate keys
-----------------------------------------------------------------------------------------
+
 Think of it as a 'soft' merge
 
 Example
--------
-`hash   = { :one => 1, :two => 2, :three => 3 }
+`hash   = { :one => 1, :two => 2, :three => 3 }`
 hash_2 = { :one => 1, :two => 2, :four => 4 }
 
 hash.rollup hash_2
