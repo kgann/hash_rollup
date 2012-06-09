@@ -7,5 +7,5 @@ Gem::Specification.new do |s|
   s.authors     = ['Kyle Gann']
   s.email       = 'kylegann@gmail.com'
   s.files       = ['lib/hash_rollup.rb']
-  s.homepage    = 'http://rubygems.org/gems/rollup'
+  s.homepage    = 'https://github.com/kgann/hash_rollup/'
 end
