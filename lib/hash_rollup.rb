@@ -1,10 +1,8 @@
 module HashRollup
   def rollup(hash)
-    dup = self.dup
-    dup.merge(hash) do |key, old, new|
-      dup[key] = [dup[key]].flatten << new
+    rolled_up = merge(hash) do |key, old_val, new_val|
+      [old_val].flatten << new_val
     end
-    rolled_up = hash.merge dup
     rolled_up.each_pair{ |k, v| rolled_up[k] = yield(v, k) } if block_given?
     rolled_up
   end
