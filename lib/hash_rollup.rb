@@ -1,15 +1,13 @@
 module HashRollup
   def rollup(hash)
-    rolled_up = reduce({}) do |new_hash, tuple|
-      key, value = tuple
-      new_hash[key] = hash[key] ? [hash[key]].flatten << value : value
-      new_hash
+    dup = self.dup
+    dup.merge(hash) do |key, old, new|
+      dup[key] = [dup[key]].flatten << new
     end
-    rolled_up = hash.merge(rolled_up)
-    rolled_up.each_pair{ |key, value| rolled_up[key] = yield(value, key) } if block_given?
+    rolled_up = hash.merge dup
+    rolled_up.each_pair{ |k, v| rolled_up[k] = yield(v, k) } if block_given?
     rolled_up
   end
-
 end
 
 class Hash
