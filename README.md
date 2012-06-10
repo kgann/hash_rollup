@@ -20,7 +20,7 @@ Optionally, you can provide a block and alter the rolled up values - just a cust
 
 ```ruby
 hash.rollup hash_2 do |val, key|
-val.is_a?(Array) ? val.map{ |x| x * 2 } : val * 2
+  val.is_a?(Array) ? val.map{ |x| x * 2 } : val * 2
 end
 # { :one => [2,2], :two => [4,4], :three => 6, :four => 8 }
 ```
