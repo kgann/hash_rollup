@@ -15,6 +15,8 @@ describe Hash do
   describe "#rollup" do
     it "should require one argument" do
       lambda{ @hash.rollup }.should raise_exception ArgumentError
+      lambda{ @hash.rollup(1, 2) }.should raise_exception ArgumentError
+      lambda{ @hash.rollup({}) }.should_not raise_exception ArgumentError
     end
 
     it "should rollup all duplicte keys values into an array" do
